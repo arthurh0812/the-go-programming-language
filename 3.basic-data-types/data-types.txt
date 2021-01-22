@@ -1,0 +1,24 @@
+Four type categories:
+  - basic types
+  - aggregate types
+  - reference types
+  - interface types
+
+Basic types include:
+  - numbers
+  - strings
+  - booleans
+
+Aggregate types include:
+  - arrays
+  - structs
+
+Reference types include:
+  - pointers
+  - slices
+  - maps
+  - functions
+  - channels
+
+Interface types include:
+  - interfaces

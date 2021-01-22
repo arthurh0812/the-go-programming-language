@@ -1,0 +1,33 @@
+There's a lot more to Go than we've covered in this quick introduction. 
+Here are some topics we've barely touched upon or omitted entirelym with 
+just enough dicussion that they will be familiar when they make brief
+appearances before the full treatment.
+
+Control flow: 
+  - regular, if, for and switch statements
+
+Named types:
+  - a type declaration makes it possible to give a name to an existing type
+
+Pointers:
+  - references to variables in the computer memory access
+
+Methods and interface:
+  - a method is a function associated with a named type
+  - interfaces are abstract types that let us treat different concrete 
+  types in the same way based on what methods they have associated with 
+  them.
+
+Packages:
+  - standard library with many useful packages
+  - Go community creates and shares more and more packages
+  - packages are organized folders of code contained by modules
+  - the module folder can also be a package (most commonly "main")
+  - programming is often about using exisiting packages than writing your 
+  own
+
+Comments:
+  - comments are important because they are used by tools like "go doc" 
+  and "godoc.org" to locate and display documentation (of your packages)
+  - code that is ignored by the compiler
+  
