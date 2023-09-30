@@ -5,7 +5,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/Arthur0812/private-go/the-go-programming-language/2.program-structure/exercise-2.2/unitconv"
+	unitconv "github.com/arthurh0812/the-go-programming-language/2-program-structure/exercise-2.2/unitconv"
 )
 
 func main() {
@@ -16,7 +16,7 @@ func main() {
 			os.Exit(1)
 		}
 
-		fmt.Printf("Temperature:\n%s = %s\n%s = %s\n%s = %s\n%s = %s\n%s = %s\n%s = %s\n",
+		fmt.Printf("Temperature:\n%s  = %s\n%s = %s\n%s = %s\n%s = %s\n%s = %s\n%s = %s\n",
 			unitconv.Celsius(float), unitconv.CelsiusTo(unitconv.Fahrenheit(float)),
 			unitconv.Celsius(float), unitconv.CelsiusTo(unitconv.Kelvin(float)),
 			unitconv.Fahrenheit(float), unitconv.FahrenheitTo(unitconv.Celsius(float)),

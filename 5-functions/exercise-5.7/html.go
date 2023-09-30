@@ -6,7 +6,7 @@ import (
 	"golang.org/x/net/html"
 )
 
-func (p *Printer) printDoc(doc *html.Node) error {
+func (p *Printer) PrintDoc(doc *html.Node) error {
 	if p.output == nil {
 		return fmt.Errorf("printing document: no output provided")
 	}

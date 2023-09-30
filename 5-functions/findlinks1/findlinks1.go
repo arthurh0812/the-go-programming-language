@@ -4,8 +4,10 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strings"
+	"sync"
 
-	htmlprinter "github.com/Arthur0812/private-go/the-go-programming-language/5.functions/exercise-5.7"
+	htmlprinter "github.com/arthurh0812/the-go-programming-language/5-functions/exercise-5.7"
 
 	"golang.org/x/net/html"
 )
@@ -24,19 +26,39 @@ func main() {
 	links := []string{}
 
 	links = visit(links, doc)
+	p := htmlprinter.NewPrinter()
+
+	nodes := make(chan *html.Node)
+	var wg sync.WaitGroup
 
 	for _, link := range links {
-		fmt.Println(link)
+		wg.Add(1)
+		go func(link string) {
+			node, err := p.FetchDoc(link)
+			if err != nil {
+				log.Fatalf("findlinks1: %v\n", err)
+			}
+			nodes <- node
+			wg.Done()
+		}(link)
 	}
 
-	p := htmlprinter.NewPrinter()
-	p.Print("")
+	go func() {
+		wg.Wait()
+		close(nodes)
+	}()
+
+	for n := range nodes {
+		p.PrintDoc(n)
+	}
+	log.Println("findlinks1: finished successfully")
+
 }
 
 func visit(links []string, n *html.Node) []string {
 	if n.Type == html.ElementNode && n.Data == "a" {
 		for _, attr := range n.Attr {
-			if attr.Key == "href" {
+			if attr.Key == "href" && strings.HasPrefix(attr.Val, "https://") {
 				links = append(links, attr.Val)
 			}
 		}

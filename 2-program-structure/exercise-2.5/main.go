@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/Arthur1208/private-go/the-go-programming-language/2.program-structure/exercise-2.5/popcount"
+	popcount "github.com/arthurh0812/the-go-programming-language/2-program-structure/exercise-2.5/popcount"
 )
 
 func main() {

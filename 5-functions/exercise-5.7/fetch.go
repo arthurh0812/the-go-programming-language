@@ -7,7 +7,7 @@ import (
 	"golang.org/x/net/html"
 )
 
-func (p *Printer) fetchDoc(url string) (*html.Node, error) {
+func (p *Printer) FetchDoc(url string) (*html.Node, error) {
 	if url == "" {
 		if p.url == "" {
 			return nil, fmt.Errorf("using url: no vlid url can be used")

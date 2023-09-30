@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func main() {
+func pointers() {
 	x := 1
 	p := &x         // p of type *int, points to x
 	fmt.Println(*p) // "1"

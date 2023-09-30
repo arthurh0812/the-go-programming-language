@@ -7,7 +7,7 @@ import (
 	"sort"
 	"time"
 
-	github "github.com/Arthur0812/private-go/the-go-programming-language/4.composite-types/github"
+	github "github.com/arthurh0812/the-go-programming-language/4-composite-types/github"
 )
 
 const (

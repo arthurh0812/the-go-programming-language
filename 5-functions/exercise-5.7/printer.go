@@ -77,13 +77,14 @@ func (p *Printer) Output(w io.Writer) {
 // Print sens an HTTP request to the provided URL. If none is provided it uses the printer's URL.
 // Print prints out each HTML element and its attributes coming of the HTTP response.
 func (p *Printer) Print(url string) {
-	doc, err := p.fetchDoc(url)
+	doc, err := p.FetchDoc(url)
 	if err != nil {
 		log.Fatal("html printer:", err.Error())
 	}
 
-	err = p.printDoc(doc)
+	err = p.PrintDoc(doc)
 	if err != nil {
 		log.Fatal("html printer:", err.Error())
 	}
+
 }

@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/Arthur1208/private-go/the-go-programming-language/2.program-structure/exercise-2.1/tempconv"
+
+	tempconv "github.com/arthurh0812/the-go-programming-language/2-program-structure/tempconv"
 )
 
 func main() {
